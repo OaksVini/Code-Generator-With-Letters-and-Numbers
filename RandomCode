@@ -1,0 +1,42 @@
+#Generate a random code, when lenght is 20.
+
+
+// Name of method.
+		public string GerarCodeAcesso()
+		{
+
+// Declare variables.
+			string strCodigoAcesso = "";
+			int intNumeros = 0;
+			string strLetras = "";
+			int tamanho = 10;
+
+// Declare random class.
+			Random random = new Random();
+
+// Create a for to place the numbers/letters in variable then reference the code.
+			for (int i = 0; i < tamanho; i++)
+			{
+
+// Define value of variables.
+				intNumeros = random.Next(0, 51);
+				strLetras = "abcdefghijklmnopqrstuvxwyzABCDEFGHIJKLMNOPQRSTUVXWYZ";
+				strLetras = strLetras.Substring(intNumeros, 1);
+				intNumeros = random.Next(0, 9);
+
+// If to know is the first number/letter of code or no.
+				if (strCodigoAcesso == "")
+				{
+					strCodigoAcesso = intNumeros + strLetras;
+				}
+				else
+				{
+					strCodigoAcesso = strCodigoAcesso + intNumeros + strLetras;
+				}
+
+			}
+
+// Return the code.
+			return strCodigoAcesso;
+
+		}
