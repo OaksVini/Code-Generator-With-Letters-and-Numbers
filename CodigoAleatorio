@@ -1,0 +1,42 @@
+Gerar um codigo aleatorio de tamanho 20.
+
+
+// Metodo.
+		public string GerarCodeAcesso()
+		{
+
+// Declara variaveis.
+			string strCodigoAcesso = "";
+			int intNumeros = 0;
+			string strLetras = "";
+			int tamanho = 10;
+
+// Instanciar a classe random.
+			Random random = new Random();
+
+// Criar o for que define o numero/letra do codigo.
+			for (int i = 0; i < tamanho; i++)
+			{
+
+// Define o valor das variaveis.
+				intNumeros = random.Next(0, 51);
+				strLetras = "abcdefghijklmnopqrstuvxwyzABCDEFGHIJKLMNOPQRSTUVXWYZ";
+				strLetras = strLetras.Substring(intNumeros, 1);
+				intNumeros = random.Next(0, 9);
+
+// Se é o primeiro numero/letra da variavel referente ao codigo.
+				if (strCodigoAcesso == "")
+				{
+					strCodigoAcesso = intNumeros + strLetras;
+				}
+				else
+				{
+					strCodigoAcesso = strCodigoAcesso + intNumeros + strLetras;
+				}
+
+			}
+
+// RRetorna o codigo.
+			return strCodigoAcesso;
+
+		}
