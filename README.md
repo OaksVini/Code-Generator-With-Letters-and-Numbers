@@ -1,4 +1,4 @@
-# RandomCode
+# Code Generator With Letters and Numbers
 
 Simple generator to generate a random code.\
 Lenght is 20.\
